@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
 import chalk from "chalk";
 var ExercisesTime;
@@ -22,8 +23,8 @@ const workout = "\nWORK-OUT :";
 const details = "\nDETAILS :";
 const timing = "\nTRAINING TIME :";
 const name = "\nNAME :";
-const intro = "\n------------------ WELCOME TO AQSA'S GYM ------------------\n";
-const detailsIntro = "\n---------------- WORKOUT DETAILS -----------------";
+const intro = "\n------------------------ WELCOME TO AQSA'S GYM ------------------------\n";
+const detailsIntro = "\n----------------------- WORKOUT DETAILS -------------------------";
 console.log(chalk.bold.yellowBright(intro));
 let users = await inquirer.prompt([{
         name: "username",
@@ -86,7 +87,7 @@ while (true) {
             default: true,
         }]);
     if (runAgain.ask == false) {
-        console.log(chalk.blueBright.bold(`THANK YOU, ${users.username} FOR VISITING !`));
+        console.log(chalk.yellowBright.bold(`\nTHANK YOU, ${users.username} FOR VISITING !`));
         break;
     }
 }
