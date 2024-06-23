@@ -1,5 +1,5 @@
 {
-  "name": "cli-gym",
+  "name": "aks07-cli-gym",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
