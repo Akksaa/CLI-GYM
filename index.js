@@ -19,10 +19,18 @@ var ExercisesDetail;
     ExercisesDetail["running"] = "Running helps to build strong bones, burns Cholestrol and strengthen your Muscles.";
     ExercisesDetail["cycling"] = "Cycling increases Cardiovuscular fitness.";
 })(ExercisesDetail || (ExercisesDetail = {}));
+var Trainers;
+(function (Trainers) {
+    Trainers["trainer1"] = "Sara";
+    Trainers["trainer2"] = "Aliza";
+    Trainers["trainer3"] = "Kainaat";
+    Trainers["trainer4"] = "Maryam";
+})(Trainers || (Trainers = {}));
 const workout = "\nWORK-OUT :";
-const details = "\nDETAILS :";
+const benefits = "\nBENEFITS :";
 const timing = "\nTRAINING TIME :";
 const name = "\nNAME :";
+const trainer = "\nTRAINER :";
 const intro = "\n------------------------ WELCOME TO AQSA'S GYM ------------------------\n";
 const detailsIntro = "\n----------------------- WORKOUT DETAILS -------------------------";
 console.log(chalk.bold.yellowBright(intro));
@@ -37,47 +45,60 @@ while (true) {
             message: chalk.blueBright.bold("WHAT KIND OF WORKOUT WOULD YOU LIKE BEST?\n"),
             type: "list",
             choices: ["Push-ups", "Squats", "Dead-lifts", "Burpees", "Running", "Cycling"]
-        }]);
+        },
+        {
+            name: "trainer",
+            message: chalk.blueBright.bold("WHO WOULD YOU LIKE TO CHOOSE AS A TRAINER?\n"),
+            type: "list",
+            choices: [Trainers.trainer1, Trainers.trainer2, Trainers.trainer3, Trainers.trainer4]
+        }
+    ]);
     if (user.exercises == "Push-ups") {
         console.log(chalk.greenBright.bold(detailsIntro));
         console.log(chalk.greenBright(`${name} ${users.username}`));
         console.log(chalk.greenBright(`${workout} ${user.exercises}`));
-        console.log(chalk.greenBright(`${details} ${ExercisesDetail.pushups}`));
+        console.log(chalk.greenBright(`${benefits} ${ExercisesDetail.pushups}`));
+        console.log(chalk.greenBright(`${trainer} ${user.trainer}`));
         console.log(chalk.greenBright(`${timing} ${ExercisesTime.pushups}`));
     }
     else if (user.exercises == "Squats") {
         console.log(chalk.greenBright.bold(detailsIntro));
         console.log(chalk.greenBright(`${name} ${users.username}`));
         console.log(chalk.greenBright(`${workout} ${user.exercises}`));
-        console.log(chalk.greenBright(`${details} ${ExercisesDetail.squats}`));
+        console.log(chalk.greenBright(`${benefits} ${ExercisesDetail.squats}`));
+        console.log(chalk.greenBright(`${trainer} ${user.trainer}`));
         console.log(chalk.greenBright(`${timing} ${ExercisesTime.squats}`));
     }
     else if (user.exercises == "Dead-lifts") {
         console.log(chalk.greenBright.bold(detailsIntro));
         console.log(chalk.greenBright(`${name} ${users.username}`));
         console.log(chalk.greenBright(`${workout} ${user.exercises}`));
-        console.log(chalk.greenBright(`${details} ${ExercisesDetail.deadLifts}`));
+        console.log(chalk.greenBright(`${benefits} ${ExercisesDetail.deadLifts}`));
+        console.log(chalk.greenBright(`${trainer} ${user.trainer}`));
         console.log(chalk.greenBright(`${timing} ${ExercisesTime.deadLifts}`));
     }
     else if (user.exercises == "Burpees") {
         console.log(chalk.greenBright.bold(detailsIntro));
         console.log(chalk.greenBright(`${name} ${users.username}`));
         console.log(chalk.greenBright(`${workout} ${user.exercises}`));
-        console.log(chalk.greenBright(`${details} ${ExercisesDetail.burpees}`));
+        console.log(chalk.greenBright(`${benefits} ${ExercisesDetail.burpees}`));
+        console.log(chalk.greenBright(`${trainer} ${user.trainer}`));
         console.log(chalk.greenBright(`${timing} ${ExercisesTime.burpees}`));
     }
     else if (user.exercises == "Running") {
         console.log(chalk.greenBright.bold(detailsIntro));
         console.log(chalk.greenBright(`${name} ${users.username}`));
         console.log(chalk.greenBright(`${workout} ${user.exercises}`));
-        console.log(chalk.greenBright(`${details} ${ExercisesDetail.running}`));
+        console.log(chalk.greenBright(`${benefits} ${ExercisesDetail.running}`));
+        console.log(chalk.greenBright(`${trainer} ${user.trainer}`));
         console.log(chalk.greenBright(`${timing} ${ExercisesTime.running}`));
     }
     else if (user.exercises == "Cycling") {
         console.log(chalk.greenBright.bold(detailsIntro));
         console.log(chalk.greenBright(`${name} ${users.username}`));
         console.log(chalk.greenBright(`${workout} ${user.exercises}`));
-        console.log(chalk.greenBright(`${details} ${ExercisesDetail.cycling}`));
+        console.log(chalk.greenBright(`${benefits} ${ExercisesDetail.cycling}`));
+        console.log(chalk.greenBright(`${trainer} ${user.trainer}`));
         console.log(chalk.greenBright(`${timing} ${ExercisesTime.cycling}`));
     }
     const runAgain = await inquirer.prompt([{
